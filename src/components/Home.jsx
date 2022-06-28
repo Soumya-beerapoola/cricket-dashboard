@@ -33,9 +33,8 @@ const Home = () => {
     }
 
     const getMatches = (schedule) => {
-        return schedule.matches.map((match) => 
-        <MatchDetails />
-            //  <Schedule matchType={schedule.matchType} matchStatus={selectedTab} homeTeam={match.homeTeamName} awayTeam={match.awayTeamName} matchDate={match.matchdate} venue={match.venue} matchNumber={match.matchNumber}></Schedule>
+        return schedule.matches.map((match) =>    
+             <MatchDetails matchType={schedule.matchType} matchStatus={selectedTab} homeTeam={match.homeTeamName} awayTeam={match.awayTeamName} matchDate={match.matchdate} venue={match.venue} matchNumber={match.matchNumber}></MatchDetails>
          )
      }
 
@@ -47,9 +46,8 @@ const Home = () => {
                 <FilterComponent list={types} value={selectedType} onChange={onFilter} ></FilterComponent>
                 {data.newSchedule.map((match, i) => {
                     return (
-                        <div key={i} className="mt-2">
-                            <MatchInfo />
-                            {/* <MatchInfo seriesName={match.seriesName} leauge={match.league}></MatchInfo> */}
+                        <div key={i} className="mt-2">    
+                            <MatchInfo seriesName={match.seriesName} leauge={match.league}></MatchInfo>
                             <div className="flex overflow-auto max-w-full">
                             {getMatches(match)} 
                             </div>                  
