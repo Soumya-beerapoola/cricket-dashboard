@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import TabComponent from "./TabComponent";
 import FilterComponent from "./FilterComponent";
+import MatchInfo from './MatchInfo';
+import MatchDetails from "./MatchDetails";
 import { title, status, types } from "../constants";
 
 const Home = () => {
@@ -23,6 +25,8 @@ const Home = () => {
                 <div className="font-bold p-4" >{title}</div>
                 <TabComponent list={status} value={selectedTab}status={onTabChange}></TabComponent>
                 <FilterComponent list={types} value={selectedType} onChange={onFilter} ></FilterComponent>
+                <MatchInfo />
+                <MatchDetails />
             </div>
         </div>
     )
